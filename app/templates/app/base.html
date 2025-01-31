@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<style>
+    /* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #2c3e50;
+    margin-top: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+/* Full-Screen Section Styling */
+.full-screen-header {
+    background: radial-gradient(circle, rgba(56, 75, 172, 1) 0%, rgba(92, 119, 179, 1) 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-size: 3.2em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: 0 25px;
+}
+
+/* Form Styling */
+form {
+    text-align: center;
+    margin-top: 30px;
+}
+
+form input[type="text"] {
+    padding: 14px;
+    width: 350px;
+    border: 2px solid #8e44ad;
+    border-radius: 30px;
+    margin-right: 20px;
+    font-size: 1.2em;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #9b59b6;
+    box-shadow: 0 0 5px rgba(155, 89, 182, 0.8);
+}
+
+form button {
+    padding: 14px 35px;
+    font-size: 1.2em;
+    background-color: #8e44ad;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+    background-color: #9b59b6;
+    transform: translateY(-4px);
+}
+
+form button:active {
+    transform: translateY(2px);
+}
+
+/* Link Container Styling */
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 25px;
+}
+
+.links-container a {
+    display: inline-block;
+    font-size: 1.3em;
+    color: #8e44ad;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.links-container a:hover {
+    color: #9b59b6;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+th, td {
+    padding: 18px;
+    text-align: left;
+    font-size: 1.1em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #8e44ad;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+tr:hover {
+    background-color: #ecf0f1;
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Mobile View - Media Queries */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    form input[type="text"] {
+        width: 280px;
+    }
+
+    form button {
+        width: auto;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .full-screen-header {
+        font-size: 2.5em;
+        padding: 30px;
+    }
+}
+
+</style>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Barangay Bucandala</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+ 
+        </header>
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>

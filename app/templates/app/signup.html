@@ -1,0 +1,120 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+ 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+.signuppage {
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signuppage h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+
+form input[type="text"], form input[type="password"], form input[type="email"] {
+    padding: 12px;
+    width: 100%;
+    border: 2px solid #3498db;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+form input[type="text"]:focus, form input[type="password"]:focus, form input[type="email"]:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8);
+}
+
+form button {
+    padding: 12px 30px;
+    font-size: 1.2em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+
+form button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+form button:active {
+    transform: translateY(2px);
+}
+
+
+.signuppage a {
+    display: inline-block;
+    font-size: 1.1em;
+    color: #3498db;
+    text-decoration: none;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+.signuppage a:hover {
+    color: #2980b9;
+}
+
+
+@media (max-width: 768px) {
+    .signuppage {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .signuppage h2 {
+        font-size: 2em;
+    }
+
+    form button {
+        font-size: 1em;
+    }
+}
+
+</style>
+<div class="signuppage">
+    <h2>Signup</h2>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Signup</button>
+    </form>
+    <a href="{% url 'login' %}">Login</a>
+</div>
+{% endblock content %}
