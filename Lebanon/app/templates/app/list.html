@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Barangay Bucandala Blotter List</h1>
+    
+ 
+    <form method="get">
+        <input type="text" name="search" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
+   
+    <div class="links-container">
+        <a href="{% url 'list' %}">List</a>
+        <a href="{% url 'add' %}">Add Entry</a>
+    </div>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>contact_number</th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.address }}</td>
+            <td>{{ entry.date }}</td>
+            <td>{{ entry.contact_number }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
